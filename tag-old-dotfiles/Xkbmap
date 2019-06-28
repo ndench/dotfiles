@@ -1,0 +1,1 @@
+-model thinkpad -layout us,us -variant dvorak, -option caps:escape,grp:ctrls_toggle,grp_led:caps

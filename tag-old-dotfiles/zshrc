@@ -1,0 +1,50 @@
+# If a pattern for filename generation doesn't match
+# pass it onto the command. Allows HEAD^ to work as
+# expected.
+setopt NO_NOMATCH
+
+# Don't allow extra curly brace expansion. ie. turn off:
+# echo {a-d} // {a-d}
+# echo {a..d} // a b c d
+# echo {1-4} // {1-4}
+# echo {1..4} // 1 2 3 4
+# This allows reference to the git stash with stash@{0} otherwise you have to 
+# escape the curly braces.
+unsetopt BRACE_CCL
+
+# Set 256 colors
+#export TERM=st-256color
+
+# Use local zshrc if available
+if [ -r ~/.zshrc.local ]
+then
+    # background color for terminal: #1C1C1C
+    source ~/.zshrc.local
+fi
+
+# Import Aliases
+if [ -r ~/.aliases ]
+then
+    source ~/.aliases
+fi
+
+export EDITOR=vim
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GOPATH=~/go
+export PATH=$PATH:~/.bin:$GEM_HOME/bin:$GOPATH/bin
+fpath=(~/.zsh/completion $fpath)
+
+# Configure thefuck
+eval $(thefuck --alias)
+
+# Learn about a random man page
+#whatis `ls /usr/share/man/man{1,4,5,6,7,8} | shuf -n 1 | cut -d . -f 1`
+
+# Enable base16-shell
+BASE16_SHELL=$HOME/dotfiles/base16/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+# Enable vim mode
+bindkey -v
+
+exec fish

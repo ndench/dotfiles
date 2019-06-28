@@ -1,0 +1,394 @@
+" Initial Setup {{{{
+
+set nocompatible     " get rid of vi compatibility
+
+" change the leader from \ to ,
+let mapleader =  ","
+
+" }}}}
+
+" Plugin Setup {{{{
+
+" Install Plugins {{{{
+
+filetype off                    " filetype interferes with vundle
+
+set rtp+=~/.vim/bundle/Vundle.vim  " add vundle to vim runtime
+call vundle#begin()                " initialise vundle
+
+" This is the Vundle package, which can be found on GitHub.
+" For GitHub repos, you specify plugins using the
+" 'user/repository' format
+Plugin 'gmarik/Vundle.vim'
+
+" A file system explorer
+Plugin 'scrooloose/nerdtree'
+
+" Runs external syntax checkers on code
+Plugin 'scrooloose/syntastic'
+
+" Orgasmic commenting
+Plugin 'scrooloose/nerdcommenter'
+
+" A fuzzy file finder
+Plugin 'kien/ctrlp.vim'
+
+" Line up text
+Plugin 'godlygeek/tabular'
+
+" Javascript syntax
+Plugin 'jelera/vim-javascript-syntax'
+
+" Better Javascript indenting and highlighting
+Plugin 'pangloss/vim-javascript'
+
+" Show indent guides
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Add closing quote/bracket
+Plugin 'Raimondi/delimitMate'
+
+" quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
+
+" allow plugins to use '.' command
+Plugin 'tpope/vim-repeat'
+
+" Time tracking
+Plugin 'wakatime/vim-wakatime'
+
+" Markdown
+Plugin 'plasticboy/vim-markdown'
+
+" Navigate tmux and vim splits with ctrl+hjkl
+Plugin 'christoomey/vim-tmux-navigator'
+
+" Additional syntax highligiting for ansible yaml
+Plugin 'pearofducks/ansible-vim'
+
+" Nginx sytax
+Plugin 'chr4/nginx.vim'
+
+" PHP syntax
+Plugin 'StanAngeloff/php.vim'
+
+" Better omnicompletion for ph
+Plugin 'shawncplus/phpcomplete.vim'
+
+" Use <Tab> for omnicompletion
+"Plugin 'ervandew/supertab'
+
+" PHP qa tools, phpcs, phpmd, phpunit
+"Plugin 'joonty/vim-phpqa'
+
+" Vim debugger
+Plugin 'joonty/vdebug'
+
+" Symfony
+Plugin 'docteurklein/vim-symfony'
+
+" Terraform
+Plugin 'hashivim/vim-terraform'
+
+" Base16 colorschemes
+Plugin 'chriskempson/base16-vim'
+
+call vundle#end()
+filetype plugin indent on       " turn filetype, plugin and indent on
+
+" }}}}
+
+" Vundle Setup {{{{
+
+" Use ssh instead of https
+let g:vundle_default_git_proto = 'git'
+
+" }}}}
+
+" NERDTree Setup {{{{
+
+" Open NERDTree
+nmap <leader>nt :NERDTree<CR>
+
+" }}}}
+
+" delimitMate Setup {{{{
+
+" Expand both spaces and carriage returns when inside delimiters
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+
+" }}}}
+
+" Syntastic Setup {{{{
+
+" Run syntastic on file open, as well as on save
+let g:syntastic_check_on_open=1
+
+" }}}}
+
+" Vdebug Setup {{{{
+
+" Ensure vdebug_options is set
+if !exists('g:vdebug_options')
+    let g:vdebug_options = {}
+endif
+
+" Don't break at first line
+let g:vdebug_options["break_on_open"] = 0
+
+" }}}}
+
+" Terraform Setup {{{{
+
+let g:terraform_align=1
+
+let g:terraform_fold_sections=1
+
+
+" }}}}
+
+" }}}}
+
+" General Functionality {{{{
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+set incsearch         " do incremental searching
+set autoindent        " always set autoindenting on
+set hidden            " handle hidden files better
+set confirm           " display confirmation for unsaved changes
+set scrolloff=10      " give the cursor lines at the top and bottom
+set ignorecase        " ignore case when searching
+set smartcase         " case sensitive seacrh if capital letter used
+set history=1000      " remember more commands and search history
+set undolevels=1000   " use many undos
+set tabstop=4         " number of visual spaces per TAB
+set softtabstop=4     " number of spaces in TAB when editing
+set shiftwidth=4      " number of spaces for reindenting (<<, >>)
+set expandtab         " use spaces not tabs
+set splitbelow        " open splits to bottom
+set splitright        " open vsplits to right
+set modelines=1       " Check the final line for a modeline
+set pastetoggle=<F2>  " F2 disables autoindent
+set lazyredraw        " redraw only when we need to
+"set foldenable        " enable folding
+"set foldmethod=indent " fold based on indent level
+set mouse=a           " enable the mouse
+set autoread          " automaticaly read file changes
+set visualbell        " use a visual bell instead of an audible one
+set t_vb=             " disable bell
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" }}}}
+
+" General UI {{{{
+
+syntax on           " syntax highlighting
+set ruler	        " show the cursor position all the time
+set showcmd	        " display incomplete commands
+set nowrap          " don't wrap lines
+set relativenumber  " show line numbers relative to current line
+set number          " show the line number we're currently on
+set cursorline      " highlight line the cursor is on
+set title           " change the terminal's title
+set showmatch mat=2 " show matching brackets for .2 sec
+set hlsearch        " highlight the last search
+
+" highlight strings inside of comments
+let c_comment_strings=1
+
+" show trailing whitespace
+let c_space_errors=1
+
+" }}}}
+
+" Colors {{{{
+
+" Enable base16 256 colors
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+
+" }}}}
+
+" Remappings {{{{
+
+" Double clicking searches for current word
+noremap <2-LeftMouse> #*
+inoremap <2-LeftMouse> #*
+  
+" Set Y to copy the rest of the line
+nnoremap Y y$
+
+" semicolon is easier that colon
+nnoremap ; :
+vnoremap ; :
+
+" For when you forget to sudo...
+cmap w!! silent w !sudo tee % >/dev/null
+
+" Pressing enter in command mode inserts a line
+nmap <S-Enter> <S-O><Esc>
+nmap <CR> o<Esc>
+
+" Don't use Ex mode, use Q for formatting
+nnoremap Q <nop>
+
+" }}}}
+
+" Leader Shortcuts {{{{
+
+" quickly edit/reload the vimrc
+nmap <silent> <leader>ev :edit $MYVIMRC<CR>
+nmap <silent> <leader>sv :write<CR>:source $MYVIMRC<CR>
+nmap <silent> <leader>so :source $MYVIMRC<CR>
+
+" clear serch highling
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Switch to the directory of open buffer
+nmap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+" }}}}
+
+" Navigation {{{{
+
+" Remap navigation to work when text is wrapped
+vmap j gj
+vmap k gk
+vmap $ g$
+vmap 0 g0
+vmap ^ g^
+nmap j gj
+nmap k gk
+nmap $ g$
+nmap 0 g0
+nmap ^ g^
+
+" Better way to switch windows
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" }}}}
+
+" Autocomplete menu {{{{
+
+" Popup menu for autocompleting commands
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
+
+" Set the autocomplete menu to work more like IDE
+set completeopt=longest,menuone
+
+" Pressing enter in autocomplete will select the chosen option
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" }}}}
+
+" Custom functions {{{{
+
+" toggle highlighting long lines
+fu! LongLineHighlightToggle()
+    highlight OverLength ctermbg=darkgrey guibg=#592929
+    if exists('w:long_line_match')
+        match OverLength //
+        unlet w:long_line_match
+    else
+        match OverLength /\%79v.\+/
+        let w:long_line_match = 1
+    endif
+endfunction
+nmap <Leader>l :call LongLineHighlightToggle()<CR>
+
+" Set tabstop, softtabstop and shiftwidth to the same value
+command! -nargs=* Stab call Stab()
+function! Stab()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+endfunction
+
+" }}}}
+
+" Auto Commands {{{{
+
+" markdown filetype
+autocmd BufNewFIle,BufRead *.md set syntax=markdown textwidth=100
+
+" save on focus lost ignoring errors
+au FocusLost * silent! wa
+
+" reread file when focousing
+autocmd FocusGained * checktime
+
+" reset file syntax
+autocmd BufEnter * :syntax sync minlines=20
+
+" return to last edit position when opening files
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+
+" if vim is opened on a directory, auto open NERDTree
+if isdirectory(argv(0))
+    bd 
+    autocmd VimEnter * exe "cd" argv(0)
+    autocmd VimEnter * NERDTree
+endif
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
+                 \ | wincmd p | diffthis
+endif
+
+
+" }}}}
+
+" Commands {{{{
+
+" allow wrapping to be easily set
+command! -nargs=* Wrap set wrap! linebreak! nolist
+
+" }}}}
+
+" Backups {{{{
+
+" Change the location of swapfiles
+" Double slash at the end, make the name of the swap
+" be composed of it's path
+set backup
+set backupdir=$HOME/.vim/swapfiles//,/tmp//
+set backupskip=/tmp/*
+set directory=$HOME/.vim/swapfiles//,/tmp//
+set writebackup
+
+" }}}}
+
+" vim:foldmethod=marker:foldlevel=0
