@@ -1,0 +1,50 @@
+[user]
+    email = ndenc2@gmail.com
+    name = Nathan Dench
+[push]
+    default = upstream
+[core]
+    pager = diff-so-fancy | less --tabs=4 -RFXGJ
+[alias]
+    pl = pull --prune --ff-only
+    plr = pull --rebase --prune
+    pu = push
+    co = checkout
+    cob = checkout -b
+    br = branch
+    ci = commit
+    cm = commit --message
+    ca = commit --amend
+    can = commit --amend --no-edit
+    a = add
+    wd = diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+    d = diff
+    s = status --short --branch
+    l = log --pretty=tformat:'%C(green)%h %Creset%s%Cblue [%an %ad]' --date=relative --decorate
+    ll = log --pretty=tformat:'%C(green)%h%Cred%d %Creset%s%Cblue [%an %ad]' --date=relative --decorate --numstat
+    lb = log --pretty=tformat:'%C(green)%h %Creset%s%Cblue [%an %ad]' --date=relative --decorate master..
+    lg = log --graph --date=relative --pretty=tformat:'%Cgreen%h%Creset -%C(auto)%d%Creset %s %C(blue)[%an %ad]%Creset' --all
+    pr = diff --shortstat master...
+    purge = "!git branch -vv | grep \\:\\ gone | grep -v \\* | cut -c 3- | cut -d\\  -f 1 | grep -v master"
+    purgef = "!git purge | xargs -n 1 git branch -D"
+[diff]
+    compactionHeuristic = true
+    tool = icdiff
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = /usr/bin/icdiff --line-numbers $LOCAL $REMOTE
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[color "diff"]
+    commit = green
+    meta = yellow
+    frag = cyan
+    old = red
+    new = green
+    whitespace = red reverse
