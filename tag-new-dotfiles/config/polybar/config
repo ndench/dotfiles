@@ -30,7 +30,7 @@ modules-right  = ${env:POLYBAR_MODULES:coreuse temperature memory pkg network vo
 inherit = bar/master
 
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
+monitor = ${env:MONITOR:}
 
 modules-left   = i3 menu
 modules-center = clock
