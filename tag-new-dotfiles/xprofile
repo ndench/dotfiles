@@ -21,6 +21,9 @@ gnome-keyring-daemon --start --components=pkcs11 &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
+# set keymap for rofi
+setxkbmap -model thinkpad -layout us,us -variant dvorak, -option caps:escape,grp:ctrls_toggle,grp_led:caps
+
 # dpms: timeout sleep off
 xset dpms 600 900 1200
 
