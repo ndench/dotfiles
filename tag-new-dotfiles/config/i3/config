@@ -267,9 +267,9 @@ for_window [class="(?i)(?:geany|firefox)"]  focus
 
 # Assign Applications to specific workspace
 # get class with xprop
-assign [class="(?i)(?:firefox)"] → $WS1
-assign [class="(?i)(?:geany)"]   → $WS2
-assign [class="(?i)(?:thunar)"]  → $WS3
+#assign [class="(?i)(?:firefox)"] → $WS1
+#assign [class="(?i)(?:geany)"]   → $WS2
+#assign [class="(?i)(?:thunar)"]  → $WS3
 
 # focus, floating, & sticky
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
