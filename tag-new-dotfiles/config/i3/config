@@ -25,7 +25,7 @@ for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>
 
 # gaps
 gaps inner 5
-gaps outer 5
+gaps outer 0
 
 # font
 font pango:monospace 11
