@@ -219,9 +219,9 @@ bindsym Mod1+Right resize grow   width  10 px or 1 ppt
 bindcode Mod1+23 layout toggle tabbed split
 bindcode $Mod+23 layout toggle splitv splith
 
-# switch to workspace with urgent window
-for_window [urgent="latest"] focus
-focus_on_window_activation   focus
+# don't automatically focus windows
+focus_on_window_activation smart
+focus_follows_mouse no
 
 # container layout
 bindsym $Mod+s split h

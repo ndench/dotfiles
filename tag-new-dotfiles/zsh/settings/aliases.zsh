@@ -65,3 +65,10 @@ alias timer='time read -p "Press enter to stop"'
 # shellcheck disable=2142
 alias xp='xprop | awk -F\"'" '/CLASS/ {printf \"NAME = %s\nCLASS = %s\n\", \$2, \$4}'"
 alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
+
+# quick config
+alias cdot='cd ~/.dotfiles'
+alias edot='vim ~/.dotfiles'
+alias cprov='cd ~/git/ndench/provision-local'
+alias eprov='vim ~/git/ndench/provision-local'
+alias mprov='make -C ~/git/ndench/provision-local'
