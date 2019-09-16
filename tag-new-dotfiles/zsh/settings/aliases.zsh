@@ -72,3 +72,5 @@ alias edot='vim ~/.dotfiles'
 alias cprov='cd ~/git/ndench/provision-local'
 alias eprov='vim ~/git/ndench/provision-local'
 alias mprov='make -C ~/git/ndench/provision-local'
+
+alias tf='terraform'
