@@ -86,14 +86,16 @@ for arg in "$@"; do
             else
                 ANS="$(rofi -sep "|" -dmenu -i -p 'System' -width 20 \
                     -hide-scrollbar -line-padding 4 -padding 20 \
-                    -lines 4 <<< " Lock| Logout| Reboot| Shutdown")"
+                    -lines 6 <<< " Lock| Logout| Reboot| Shutdown| Disable| Enable")"
             fi
 
             case "$ANS" in
-                *Lock) i3lock-fancy ;;
+                *Lock) xautolock -locknow ;;
                 *Reboot) systemctl reboot ;;
                 *Shutdown) systemctl -i poweroff ;;
                 *Logout) session-logout || pkill -15 -t tty"$XDG_VTNR" Xorg ;;
+                *Disable) xautolock -disable ;;
+                *Enable) xautolock -enable ;;
             esac
             ;;
         *)

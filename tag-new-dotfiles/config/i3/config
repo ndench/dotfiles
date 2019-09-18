@@ -64,7 +64,8 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 # run once
 exec --no-startup-id xfsettingsd
 exec --no-startup-id al-compositor --start
-exec --no-startup-id xautolock -locker "i3lock-fancy -p"
+exec --no-startup-id xautolock -time 11 -locker "i3lock-fancy -p" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
+exec --no-startup-id unclutter
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym $Mod+D exec --no-startup-id rofi_run -r
