@@ -73,4 +73,8 @@ alias cprov='cd ~/git/ndench/provision-local'
 alias eprov='vim ~/git/ndench/provision-local'
 alias mprov='make -C ~/git/ndench/provision-local'
 
+# Custom aliases
 alias tf='terraform'
+alias xclip='xclip -sel clip'
+alias xsel='xsel -b'
+alias ctmp='cd $(mktemp -d)'
