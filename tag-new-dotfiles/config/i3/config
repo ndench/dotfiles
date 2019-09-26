@@ -90,7 +90,7 @@ bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
-bindsym --release Print exec --no-startup-id "scrot $HOME/screenshots/%Y-%m-%d_%H-%M-%S.png--focused --exec 'xclip -sel clip -t image/png -in $f ; feh $f'"
+bindsym --release Print exec --no-startup-id "scrot $HOME/screenshots/%Y-%m-%d_%H-%M-%S.png --focused --exec 'xclip -sel clip -t image/png -in $f ; feh $f'"
 bindsym --release Control+Print exec --no-startup-id "scrot $HOME/screenshots/%Y-%m-%d_%H-%M-%S.png --select --exec 'xclip -sel clip -t image/png -in $f ; feh $f'"
 
 # audio
