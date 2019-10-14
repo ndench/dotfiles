@@ -54,7 +54,7 @@ URxvt*scrollBar_right: false
 URxvt*internalBorder: 0
 URxvt*externalBorder: 0
 URxvt*letterSpace: -1
-URxvt.font: xft:monospace:size=11
+URxvt.font: xft:monospace:size=11, xft:Noto Color Emoji
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard

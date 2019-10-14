@@ -56,8 +56,7 @@ for arg in "$@"; do
                 { echo "Requires 'libqalculate' installed"; exit 1; }
 
             rofi -modi "calc:qalc +u8 -nocurrencies" -padding 50 \
-                -show "calc:qalc +u8 -nocurrencies" -line-padding 4 \
-                -hide-scrollbar
+                -show calc -line-padding 4 -hide-scrollbar
             ;;
         -c|--clipboard)
             hash greenclip &>/dev/null ||

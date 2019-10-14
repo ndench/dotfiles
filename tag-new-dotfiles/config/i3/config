@@ -89,6 +89,12 @@ bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
+# calculator
+bindsym $Mod+q exec --no-startup-id rofi_run -q
+
+# emoji keyboard
+bindsym $Mod+m exec --no-startup-id rofimoji
+
 # Screenshot
 bindsym --release Print exec --no-startup-id "flameshot gui"
 
