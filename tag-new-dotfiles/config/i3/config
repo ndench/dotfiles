@@ -64,7 +64,7 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 # run once
 exec --no-startup-id xfsettingsd
 exec --no-startup-id al-compositor --start
-exec --no-startup-id xautolock -time 11 -locker "i3lock-fancy -p" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
+exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -p" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
 exec --no-startup-id unclutter
 exec --no-startup-id xfce4-power-manager
 
