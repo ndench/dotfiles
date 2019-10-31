@@ -57,6 +57,7 @@ set $WS8 "8: "
 exec_always --no-startup-id polybar-session
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/archlabs/archlabs.jpg
 
 # If you have a numpad you may want to enable this
 # exec_always --no-startup-id numlockx on
