@@ -163,6 +163,8 @@ bindsym $Mod+Shift+Mod2+KP_Up move container to workspace $WS8; workspace $WS8
 # move workspace to another monitor
 bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Right move workspace to output right
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Down move workspace to output down
 
 
 ############################################################
