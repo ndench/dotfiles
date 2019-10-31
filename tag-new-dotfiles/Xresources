@@ -3,6 +3,8 @@
 *.background:  #1c2023
 *.cursorColor: #778899
 
+Xcursor.size: 16
+
 *.color0:  #1c2023
 *.color1:  #bf616a
 *.color2:  #a3be8c
