@@ -27,7 +27,8 @@
     pr = diff --shortstat master...
     purge = "!git branch -vv | grep \\:\\ gone | grep -v \\* | cut -c 3- | cut -d\\  -f 1 | grep -v master"
     purgef = "!git purge | xargs -n 1 git branch -D"
-    bump = commit --allow-empty --message "bumparoonie"
+    bump = "!git commit --allow-empty --message 'bumparoonie' && git pu"
+    rom = "rebase --onto master HEAD"
 [diff]
     compactionHeuristic = true
     tool = icdiff
