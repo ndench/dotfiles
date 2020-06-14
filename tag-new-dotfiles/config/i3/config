@@ -83,9 +83,9 @@ bindsym Mod1+q kill
 bindsym Mod1+F4 kill
 
 # core
-bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
-bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
-bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
+#bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
+#bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
+#bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
 bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
 
 # logout script
@@ -106,8 +106,8 @@ bindsym XF86AudioNext        exec --no-startup-id playerctl next
 bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
 bindsym XF86AudioStop        exec --no-startup-id playerctl stop
 bindsym XF86AudioMute        exec --no-startup-id pamixer -t
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --allow-boost -i 2
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --allow-boost -d 2
 
 # backlight
 bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 10
@@ -238,6 +238,8 @@ bindsym $Mod+Shift+comma layout tabbed
 bindsym $Mod+Shift+period layout toggle split
 
 default_orientation horizontal
+
+bindsym $Mod+f fullscreen toggle
 
 ######################################################
 ###############      Border & Gaps     ###############
