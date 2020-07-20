@@ -250,12 +250,12 @@ new_float  normal
 
 hide_edge_borders both
 
-bindsym $Mod+shift+b border toggle
+#bindsym $Mod+shift+b border toggle
 
 # changing border style
-bindsym $Mod+n border normal
-bindsym $Mod+y border 1pixel
-bindsym $Mod+u border none
+#bindsym $Mod+n border normal
+#bindsym $Mod+y border 1pixel
+#bindsym $Mod+u border none
 
 # change gaps
 bindsym $Mod+plus                gaps inner current plus  5
