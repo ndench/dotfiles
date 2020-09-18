@@ -64,11 +64,10 @@ exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/archlabs/archla
 
 # run once
 exec --no-startup-id xfsettingsd
-exec --no-startup-id al-compositor --start
 exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -p" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'"
 exec --no-startup-id unclutter
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id compton --fading
+exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym $Mod+D exec --no-startup-id rofi_run -r
