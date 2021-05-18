@@ -1,0 +1,32 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set easymotion
+set NERDTree
+
+""" Common settings -------------------------
+set scrolloff=5
+set incsearch
+set relativenumber
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+map <leader>f <Plug>(easymotion-f)
+map <leader>F <Plug>(easymotion-F)
+map <leader>t <Plug>(easymotion-t)
+map <leader>T <Plug>(easymotion-T)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+
+map <leader>r <Action>(RenameElement)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>b <Action>(ToggleLineBreakpoint)
