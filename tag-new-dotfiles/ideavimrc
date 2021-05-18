@@ -14,7 +14,7 @@ set relativenumber
 """ Idea specific settings ------------------
 set ideajoin
 set ideastatusicon=gray
-set idearefactormode=keep
+set idearefactormode=visual
 
 """ Mappings --------------------------------
 map <leader>w <Plug>(easymotion-w)
@@ -30,3 +30,4 @@ map <leader>r <Action>(RenameElement)
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>s <Action>(ViewStatusBar)
