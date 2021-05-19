@@ -15,7 +15,9 @@ application/x-extension-xht=firefox-developer-edition.desktop
 application/pdf=firefox-developer-edition.desktop
 x-scheme-handler/webcal=google-chrome.desktop
 x-scheme-handler/postman=Postman.desktop
-x-scheme-handler/screen=screen-screen.desktop
+x-scheme-handler/pop=pop.desktop
+x-scheme-handler/discord-478576776990425110=discord-478576776990425110.desktop
+x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
 inode/directory=exo-file-manager.desktop;
@@ -32,3 +34,4 @@ application/xhtml+xml=firefox.desktop;firefox-developer-edition.desktop;
 application/x-extension-xhtml=firefox.desktop;firefox-developer-edition.desktop;
 application/x-extension-xht=firefox.desktop;firefox-developer-edition.desktop;
 application/pdf=google-chrome.desktop;firefox.desktop;
+text/plain=libreoffice-calc.desktop;
