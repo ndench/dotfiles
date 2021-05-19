@@ -7,7 +7,8 @@ set easymotion
 set NERDTree
 
 """ Plugin settings -------------------------
-set g:EasyMotion_do_mapping=0
+let g:EasyMotion_do_mapping=0
+let g:EasyMotion_smartcase=1
 
 """ Common settings -------------------------
 set scrolloff=5
@@ -20,10 +21,7 @@ set ideastatusicon=gray
 set idearefactormode=visual
 
 """ Mappings --------------------------------
-map <leader>w <Plug>(easymotion-w)
-map <leader>b <Plug>(easymotion-b)
-map <leader>e <Plug>(easymotion-e)
-map <leader>s <Plug>(easymotion-s)
+map <leader>s <Plug>(easymotion-s2)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
