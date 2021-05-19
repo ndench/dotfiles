@@ -1,4 +1,5 @@
-set modeline           " enable vim modelines
+let mapleader = ","    " change the leader \ to ,
+
 set hlsearch           " highlight search items
 set incsearch          " searches are performed as you type
 set ignorecase         " case insensitive search
@@ -72,7 +73,6 @@ nnoremap 0 ^
 nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap <Tab> ==1j
 
 " re-visual text after changing indent
 vnoremap > >gv
@@ -81,6 +81,13 @@ vnoremap < <gv
 " split the window vertically and horizontally
 nnoremap _ <C-W>s<C-W><Down>
 nnoremap <Bar> <C-W>v<C-W><Right>
+
+" colon is easier than semi-colon
+nnoremap ; : 
+vnoremap ; :
+
+" clear search highlighting
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " ------ autocmd ------
 
