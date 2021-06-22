@@ -11,7 +11,7 @@ let g:EasyMotion_do_mapping=0
 let g:EasyMotion_smartcase=1
 
 """ Common settings -------------------------
-set scrolloff=10
+set scrolloff=5
 set hlsearch
 set incsearch
 set ignorecase
@@ -27,21 +27,15 @@ set idearefactormode=visual
 
 """ Mappings --------------------------------
 map <leader>s <Plug>(easymotion-s2)
-map <leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
 
 map <leader>r <Action>(RenameElement)
 map <leader>a <Action>(Annotate)
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <leader>p <Action>(ToggleLineBreakpoint)
+map <leader>b <Action>(ToggleLineBreakpoint)
 
-nnoremap 0 ^
 nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-vnoremap > >gv
-vnoremap < <gv
 
 nnoremap ; :
 vnoremap ; :
