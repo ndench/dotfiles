@@ -203,6 +203,7 @@ bindsym $Mod+Right focus right
 
 bindsym $Mod+p focus parent
 bindsym $Mod+c focus child
+bindsym $Mod+t focus mode_toggle
 
 # move focused window
 bindsym $Mod+Shift+$left  move left  10px
