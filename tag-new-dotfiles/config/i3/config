@@ -290,8 +290,9 @@ for_window [class="vlc"] floating enable
 for_window [class="Gthumb"] floating enable
 for_window [class="SimpleScreenRecorder"] floating enable
 for_window [class="feh"] floating enable
-for_window [class="Screen"] floating enable
+for_window [class="Pop"] floating enable
 for_window [class="Vizy"] floating enable
+for_window [class="zoom"] floating enable
 
 popup_during_fullscreen smart
 
