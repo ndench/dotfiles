@@ -50,3 +50,8 @@ export NVM_SOURCE="/usr/share/nvm"                     # The AUR package install
 
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export PATH=$PATH:~/.bin:$GEM_HOME/bin
+
+# Enable custom autocompletion
+autoload -Uz compinit
+compinit
+
