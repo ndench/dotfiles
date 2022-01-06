@@ -94,7 +94,7 @@ bindsym $Mod+x exec --no-startup-id rofi_run -l
 bindsym $Mod+q exec --no-startup-id rofi_run -q
 
 # emoji keyboard
-bindsym $Mod+m exec --no-startup-id rofimoji --insert-with-clipboard
+bindsym $Mod+m exec --no-startup-id rofimoji --action clipboard
 
 # Screenshot
 bindsym --release Print exec --no-startup-id "flameshot gui"
