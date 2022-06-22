@@ -1,27 +1,36 @@
 #!/bin/sh
 
-# ~/.xprofile
+# sourced at boot by ~/.xinitrc and most display managers
 
-# sourced at boot by ~/.xinitrc and display managers like lightdm
 
+# xdg standard configuration location (needed by some applications)
 export XDG_CONFIG_HOME="$HOME/.config"
 
-[ -d /sbin ] && PATH="$PATH:/sbin"
-[ -d /usr/sbin ] && PATH="$PATH:/usr/sbin"
-[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+# add ~/.local/bin to the PATH (application executables)
+export PATH="$HOME/.local/bin:$PATH"
 
-# restore the background
-nitrogen --restore &
+# start the compositor (transparency, fade, shadows, blur, etc.)
 
-# keyring and polkit daemons
+# start the network tray application
+nm-applet &
+
+# start the volume tray application
+volumeicon &
+
+
+# start xfce power manager
+xfce4-power-manager &
+
+# start the gnome polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-gnome-keyring-daemon --start --components=pkcs11 &
 
-# set keymap for rofi
-setxkbmap -model thinkpad -layout us,us -variant dvorak, -option caps:escape,grp:ctrls_toggle,grp_led:caps
 
-# dpms: timeout sleep off
+# set display timeout, sleep, and power off times
 xset dpms 600 900 1200
 
-# keyboard repeat rate
+# set keyboard repeat rate
 xset r rate 350 60
+
+# left hand mouse
+#xmodmap -e "pointer = 3 2 1"
+

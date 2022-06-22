@@ -21,10 +21,10 @@ client.placeholder      $grey $bg $bg    $bg   $bg
 client.background       $bg
 
 # border & title.. Must be set to border pixel for gaps to work
-for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>"
+for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 
 # gaps
-gaps inner 5
+gaps inner 8
 gaps outer 0
 
 # font
@@ -48,6 +48,12 @@ set $WS5 "5: "
 set $WS6 "6: "
 set $WS7 "7: "
 set $WS8 "8: "
+
+###############        Bar         ##################
+# TODO
+#bar {
+#        status_command i3status
+#}
 
 #####################################################
 ###############     Autostart      ##################
@@ -227,6 +233,11 @@ bindsym Mod1+Right resize grow   width  100 px or 100 ppt
 bindcode Mod1+23 layout toggle tabbed split
 bindcode $Mod+23 layout toggle splitv splith
 
+# switch to workspace with urgent window
+# TODO
+#for_window [urgent="latest"] focus
+#focus_on_window_activation   focus
+
 # don't automatically focus windows
 focus_on_window_activation smart
 focus_follows_mouse no
@@ -250,6 +261,7 @@ new_float  normal
 
 hide_edge_borders both
 
+# TODO
 #bindsym $Mod+shift+b border toggle
 
 # changing border style

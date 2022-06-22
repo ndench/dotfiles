@@ -1,10 +1,10 @@
 # DO NOT EDIT! This file will be overwritten by LXAppearance.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
-gtk-theme-name="ArchLabs-dARK"
-gtk-icon-theme-name="ArchLabs-Light"
-gtk-font-name="monospace 11"
-gtk-cursor-theme-name="ArchLabs-Light"
+gtk-theme-name="Adwaita-dark"
+gtk-icon-theme-name="ArchLabs-Dark"
+gtk-font-name="DejaVu Sans 11"
+gtk-cursor-theme-name="ArchLabs-Dark"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
@@ -16,14 +16,3 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintslight"
 gtk-xft-rgba="rgb"
-
-style "xfdesktop-icon-view" {
-    XfdesktopIconView::label-alpha = 10
-    base[NORMAL] = "#000000"
-    base[SELECTED] = "#71B9FF"
-    base[ACTIVE] = "#71B9FF"
-    fg[NORMAL] = "#fcfcfc"
-    fg[SELECTED] = "#ffffff"
-    fg[ACTIVE] = "#ffffff"
-}
-widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"
