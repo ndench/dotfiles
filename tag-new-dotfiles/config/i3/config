@@ -24,7 +24,7 @@ client.background       $bg
 for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 
 # gaps
-gaps inner 8
+gaps inner 5
 gaps outer 0
 
 # font
@@ -50,10 +50,9 @@ set $WS7 "7: "
 set $WS8 "8: "
 
 ###############        Bar         ##################
-# TODO
-#bar {
-#        status_command i3status
-#}
+bar {
+        status_command i3status
+}
 
 #####################################################
 ###############     Autostart      ##################
@@ -235,8 +234,8 @@ bindcode $Mod+23 layout toggle splitv splith
 
 # switch to workspace with urgent window
 # TODO
-#for_window [urgent="latest"] focus
-#focus_on_window_activation   focus
+for_window [urgent="latest"] focus
+focus_on_window_activation   focus
 
 # don't automatically focus windows
 focus_on_window_activation smart
@@ -261,10 +260,8 @@ new_float  normal
 
 hide_edge_borders both
 
-# TODO
-#bindsym $Mod+shift+b border toggle
-
 # changing border style
+#bindsym $Mod+shift+b border toggle
 #bindsym $Mod+n border normal
 #bindsym $Mod+y border 1pixel
 #bindsym $Mod+u border none

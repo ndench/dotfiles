@@ -1,4 +1,4 @@
-@theme "archlabs"
+@theme "arthur"
 
 configuration {
 	modi: "drun,run,window,ssh";

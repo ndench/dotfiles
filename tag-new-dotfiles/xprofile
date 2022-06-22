@@ -7,23 +7,26 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # add ~/.local/bin to the PATH (application executables)
-export PATH="$HOME/.local/bin:$PATH"
+#export PATH="$HOME/.local/bin:$PATH"
 
 # start the compositor (transparency, fade, shadows, blur, etc.)
 
 # start the network tray application
-nm-applet &
+#nm-applet &
 
 # start the volume tray application
-volumeicon &
+#volumeicon &
 
 
 # start xfce power manager
-xfce4-power-manager &
+#xfce4-power-manager &
 
 # start the gnome polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#gnome-keyring-daemon --start --components=pkcs11 &
 
+# set keymap for rofi
+#setxkbmap -model thinkpad -layout us,us -variant dvorak, -option caps:escape,grp:ctrls_toggle,grp_led:caps
 
 # set display timeout, sleep, and power off times
 xset dpms 600 900 1200
