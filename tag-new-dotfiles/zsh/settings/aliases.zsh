@@ -81,6 +81,6 @@ alias ctmp='cd $(mktemp -d)'
 # Dev
 alias dc='docker compose'
 alias dcu='docker compose up -d'
-alias dcd='docker compose down'
+alias dcd='docker compose down --remove-orphans'
 alias dce='docker compose exec'
 alias dcr='docker compose run'
