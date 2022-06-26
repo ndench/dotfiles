@@ -12,10 +12,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # start the compositor (transparency, fade, shadows, blur, etc.)
 
 # start the network tray application
-#nm-applet &
+nm-applet &
 
 # start the volume tray application
-#volumeicon &
+volumeicon &
 
 
 # start xfce power manager
