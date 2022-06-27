@@ -10,6 +10,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 #export PATH="$HOME/.local/bin:$PATH"
 
 # start the compositor (transparency, fade, shadows, blur, etc.)
+picom -b &
 
 # start the network tray application
 nm-applet &
@@ -17,9 +18,11 @@ nm-applet &
 # start the volume tray application
 volumeicon &
 
+# restore the last wallpaper applied with nitrogen
+nitrogen --restore &
 
 # start xfce power manager
-#xfce4-power-manager &
+xfce4-power-manager &
 
 # start the gnome polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
