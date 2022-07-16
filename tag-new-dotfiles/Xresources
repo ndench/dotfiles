@@ -3,6 +3,9 @@
 *.background:  #1C2023
 *.cursorColor: #778899
 
+! Fix weird cursor size issue
+Xcursor.size: 16
+
 *.color0:  #1C2023
 *.color1:  #BF616A
 *.color2:  #A3BE8C
