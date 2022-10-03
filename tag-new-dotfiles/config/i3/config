@@ -76,7 +76,7 @@ exec --no-startup-id unclutter
 #exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 #exec --no-startup-id dockd --daemon
-exec --no-startup-id ~/.screenlayout/autolayout.sh
+#exec --no-startup-id ~/.screenlayout/autolayout.sh
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym $Mod+D exec --no-startup-id rofi_run -r
