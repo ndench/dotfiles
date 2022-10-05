@@ -23,6 +23,10 @@
 # border & title.. Must be set to border pixel for gaps to work
 for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 
+# hide title bars
+default_border pixel 1
+default_floating_border pixel 1
+
 # gaps
 gaps inner 5
 gaps outer 0
