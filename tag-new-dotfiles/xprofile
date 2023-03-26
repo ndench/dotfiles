@@ -26,7 +26,7 @@ nitrogen --restore &
 
 # start the gnome polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#gnome-keyring-daemon --start --components=pkcs11 &
+gnome-keyring-daemon --start --components=pkcs11 &
 
 # set keymap for rofi
 #setxkbmap -model thinkpad -layout us,us -variant dvorak, -option caps:escape,grp:ctrls_toggle,grp_led:caps
