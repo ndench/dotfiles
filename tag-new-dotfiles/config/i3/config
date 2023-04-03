@@ -75,13 +75,14 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 
 # run once
 exec --no-startup-id xfsettingsd
-exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -p" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'" -detectsleep
-exec --no-startup-id unclutter
+exec --no-startup-id xautolock -time 10 -locker "i3lock --clock --ignore-empty-password --show-failed-attempts --blur 10 --insidecolor 3f4655aa" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'" -detectsleep
+#exec --no-startup-id unclutter
 #exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
+#exec --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 #exec --no-startup-id dockd --daemon
 #exec --no-startup-id ~/.screenlayout/autolayout.sh
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id xinput set-prop "MOSART Semi. 2.4G Wireless Mouse" "libinput Accel Speed" 1
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym $Mod+D exec --no-startup-id rofi_run -r
@@ -99,7 +100,7 @@ bindsym Mod1+F4 kill
 #bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
 #bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
 #bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
-bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
+bindsym $Mod+Return     exec --no-startup-id alacritty
 
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
