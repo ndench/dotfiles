@@ -23,12 +23,13 @@
     l = log --pretty=tformat:'%C(green)%h %Creset%s%Cblue [%an %ad]' --date=relative --decorate
     ll = log --pretty=tformat:'%C(green)%h%Cred%d %Creset%s%Cblue [%an %ad]' --date=relative --decorate --numstat
     lb = log --pretty=tformat:'%C(green)%h %Creset%s%Cblue [%an %ad]' --date=relative --decorate main..
-    lg = log --graph --date=relative --pretty=tformat:'%Cgreen%h%Creset -%C(auto)%d%Creset %s %C(blue)[%an %ad]%Creset' --all
+    lg = log --graph --date=relative --pretty=tformat:'%Cgreen%h%Creset -%C(auto)%d%Creset %s %C(blue)[%an %ad]%Creset' --branches
     pr = diff --shortstat main...
     purge = "!git branch -vv | grep \\:\\ gone | grep -v \\* | cut -c 3- | cut -d\\  -f 1 | grep -v master | grep -v main"
     purgef = "!git purge | xargs -n 1 git branch -D"
     bump = "!git commit --allow-empty --message 'bumparoonie' && git pu"
     rom = "rebase --onto main HEAD"
+    recent = for-each-ref --color=always --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:green)%(objectname:short)%(color:reset) - %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:blue)[%(authorname) %(committerdate:relative)%(color:reset)]'
 [diff]
     compactionHeuristic = true
     tool = icdiff
