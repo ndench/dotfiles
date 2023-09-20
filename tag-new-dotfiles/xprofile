@@ -25,7 +25,7 @@ nitrogen --restore &
 #xfce4-power-manager &
 
 # start the gnome polkit agent
-#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dbus-update-activation-environment --all
 gnome-keyring-daemon --start --components=pkcs11 &
 
