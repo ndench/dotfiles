@@ -2,7 +2,8 @@
     email = ndenc2@gmail.com
     name = Nathan Dench
 [push]
-    default = upstream
+    default = simple
+    autoSetupRemote = true
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFXGJ
 [alias]
