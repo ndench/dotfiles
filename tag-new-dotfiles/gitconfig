@@ -12,6 +12,8 @@
     pu = push
     co = checkout
     cob = checkout -b
+    sw = switch
+    swc = switch -c
     br = branch
     ci = commit
     cm = commit --message
