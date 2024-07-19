@@ -1,6 +1,6 @@
 [user]
     email = ndenc2@gmail.com
-    name = Nathan Dench
+	name = Nathan Denchman
 [push]
     default = simple
     autoSetupRemote = true
