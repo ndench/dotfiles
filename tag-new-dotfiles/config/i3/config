@@ -84,6 +84,9 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock --clock --ignore-empty-p
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id xinput set-prop "MOSART Semi. 2.4G Wireless Mouse" "libinput Accel Speed" 1
 
+# DRATA
+exec --no-startup-id drata-agent
+
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym $Mod+D exec --no-startup-id rofi_run -r
 
@@ -321,6 +324,7 @@ for_window [class="feh"] floating enable
 for_window [class="Pop"] floating enable
 for_window [class="Vizy"] floating enable
 for_window [class="zoom"] floating enable
+for_window [class="1Password"] floating enable
 
 popup_during_fullscreen smart
 
