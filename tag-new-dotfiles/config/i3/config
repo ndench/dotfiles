@@ -325,6 +325,8 @@ for_window [class="Pop"] floating enable
 for_window [class="Vizy"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="1Password"] floating enable
+for_window [class="pritunl"] floating enable
+for_window [class="Thunar"] floating enable
 
 popup_during_fullscreen smart
 
