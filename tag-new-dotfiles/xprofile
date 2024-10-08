@@ -15,6 +15,9 @@ picom -b &
 # start the network tray application
 nm-applet &
 
+# start bluetooth trap application
+blueman-applet &
+
 # start the volume tray application
 volumeicon &
 
