@@ -44,16 +44,16 @@ set $down j
 set $left h
 set $right l
 
-set $WS1 "1: "
-set $WS2 "2: "
-set $WS3 "3: "
-set $WS4 "4: "
-set $WS5 "5: "
-set $WS6 "6: "
-set $WS7 "7: "
-set $WS8 "8: "
-set $WS9 "9: "
-set $WS10 "10: "
+set $WS1 "1:  "
+set $WS2 "2: 󰖟 "
+set $WS3 "3:  "
+set $WS4 "4:  "
+set $WS5 "5:  "
+set $WS6 "6:  "
+set $WS7 "7:  "
+set $WS8 "8:  "
+set $WS9 "9:  "
+set $WS10 "10:  "
 
 ###############        Bar         ##################
 bar {
@@ -103,7 +103,8 @@ bindsym Mod1+F4 kill
 #bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
 #bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
 #bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
-bindsym $Mod+Return     exec --no-startup-id alacritty
+#bindsym $Mod+Return     exec --no-startup-id alacritty
+bindsym $Mod+t     exec --no-startup-id ghostty
 
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
@@ -211,7 +212,7 @@ bindsym $Mod+Shift+c reload
 
 # Scratchpad, Floating
 bindsym $Mod+space floating toggle
-floating_modifier  Mod1
+floating_modifier  $Mod
 
 bindsym $Mod+Shift+z move scratchpad
 bindsym $Mod+z scratchpad show
@@ -230,7 +231,7 @@ bindsym $Mod+Right focus right
 
 bindsym $Mod+p focus parent
 bindsym $Mod+c focus child
-bindsym $Mod+t focus mode_toggle
+bindsym $Mod+Shift+t focus mode_toggle
 
 # move focused window
 bindsym $Mod+Shift+$left  move left  100px
@@ -314,7 +315,7 @@ for_window [class="(?i)(?:geany|firefox)"]  focus
 
 # focus, floating, & sticky
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
-for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
+for_window [window_role="(?i)(?:pop-up|setup|bubble)"]      floating enable
 for_window [class="Peek"] floating enable
 for_window [class="Nautilus"] floating enable
 for_window [class="vlc"] floating enable
@@ -327,6 +328,7 @@ for_window [class="zoom"] floating enable
 for_window [class="1Password"] floating enable
 for_window [class="pritunl"] floating enable
 for_window [class="Thunar"] floating enable
+for_window [class="Xarchiver"] floating enable
 
 popup_during_fullscreen smart
 

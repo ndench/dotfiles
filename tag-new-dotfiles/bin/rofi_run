@@ -55,7 +55,7 @@ for arg in "$@"; do
             hash qalc &>/dev/null ||
                 { echo "Requires 'libqalculate' installed"; exit 1; }
 
-            rofi -modi "calc:qalc +u8 -nocurrencies" -padding 50 \
+            rofi -modi "calc:qalc +u8 -nocurrencies --set \"autocalc 1\"" -padding 50 \
                 -show calc -line-padding 4 -hide-scrollbar
             ;;
         -c|--clipboard)
