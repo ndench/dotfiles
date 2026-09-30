@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Keep OpenWhispr's floating dictation pop-up ("Voice Recorder") above i3 windows.
+#
+# The pop-up is an override-redirect window, so i3 doesn't manage it and
+# for_window rules can't touch it. OpenWhispr hides/shows it by unmapping and
+# re-mapping, and X keeps its old stacking position, which is under every i3
+# frame raised since. Raise it whenever it's mapped.
+
+# Only one instance (exec_always reruns this on every i3 restart)
+for pid in $(pgrep -f "^bash [^ ]*openwhispr-raise$"); do
+    [ "$pid" != "$$" ] && kill "$pid" 2>/dev/null
+done
+trap 'kill 0' EXIT
+
+# xev prints "MapNotify event, ..." then "event 0x.., window 0x.., ..."
+xev -root -event substructure | while read -r line; do
+    [[ $line == MapNotify* ]] || continue
+    read -r line
+    [[ $line =~ window\ (0x[0-9a-f]+) ]] || continue
+    xprop -id "${BASH_REMATCH[1]}" WM_CLASS WM_NAME 2>/dev/null | tr '\n' ' ' \
+        | grep -q '"open-whispr".*"Voice Recorder"' && xdotool windowraise "${BASH_REMATCH[1]}"
+done

@@ -87,6 +87,9 @@ exec --no-startup-id xinput set-prop "MOSART Semi. 2.4G Wireless Mouse" "libinpu
 # DRATA
 exec --no-startup-id drata-agent
 
+# OPENWHISPR: keep the dictation pop-up above tiled windows (see bin/openwhispr-raise)
+exec_always --no-startup-id ~/bin/openwhispr-raise
+
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym $Mod+D exec --no-startup-id rofi_run -r
 
