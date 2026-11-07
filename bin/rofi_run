@@ -92,7 +92,7 @@ for arg in "$@"; do
                 *Lock) xautolock -locknow ;;
                 *Reboot) systemctl reboot ;;
                 *Shutdown) systemctl -i poweroff ;;
-                *Logout) session-logout || pkill -15 -t tty"$XDG_VTNR" Xorg ;;
+                *Logout) i3-msg exit ;;
                 *Disable) xautolock -disable ;;
                 *Enable) xautolock -enable ;;
             esac

@@ -37,9 +37,6 @@ done
 # load the prompt last
 prompt simpl
 
-# system info and AL ascii art
-al-info
-
 # use neovim
 export EDITOR=nvim
 

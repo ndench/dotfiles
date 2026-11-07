@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=drata-agent
+Comment=drata-agentstartup script
+Exec=/opt/"Drata Agent"/drata-agent
+StartupNotify=false
+Terminal=false
