@@ -8,16 +8,15 @@ Personal Linux dotfiles (Arch, i3 on X11) managed with [rcm](https://github.com/
 
 ## How rcm maps files
 
-- Files under `tag-<name>/` are linked into `~` with a leading dot: `tag-new-dotfiles/config/i3/config` → `~/.config/i3/config`, `tag-new-dotfiles/zshrc` → `~/.zshrc`.
-- rcm links **individual files**, not directories. Editing an existing file here changes the live config immediately. A **new** file has no symlink until you run `rcup -t new-dotfiles` (or `mkrc -t new-dotfiles <path>` to move an existing `~` file into the repo and link it back).
-- `tag-new-dotfiles/rcrc` (linked to `~/.rcrc`) sets `EXCLUDES="README.md CLAUDE.md"` and `UNDOTTED="bin"`, so `tag-*/bin/*` links to `~/bin/` without a dot. Other top-level files also get linked (e.g. `Makefile` → `~/.Makefile`).
-- `tag-new-dotfiles` is the active tag. `tag-old-dotfiles` is a legacy config (compton, urxvt-era); don't edit it unless asked.
+- Files at the repo root are linked into `~` with a leading dot: `config/i3/config` → `~/.config/i3/config`, `zshrc` → `~/.zshrc`. There are no rcm tags.
+- rcm links **individual files**, not directories. Editing an existing file here changes the live config immediately. A **new** file has no symlink until you run `rcup` (or `mkrc <path>` to move an existing `~` file into the repo and link it back).
+- `~/.rcrc` is not in this repo: provision-local writes it (it has to exist before the first `rcup`). It sets `EXCLUDES="README.md CLAUDE.md Makefile"` and `UNDOTTED="bin"`, so `bin/*` links to `~/bin/` without a dot. Any other new top-level file gets linked as `~/.<name>`, so add repo-only files to `EXCLUDES` there.
 
 ## Commands
 
 - `make check`: diff the live `~/.config/mimeapps.list` against the repo copy (apps rewrite this file, which replaces the symlink with a real file).
 - `make update`: pull the live `mimeapps.list` back into the repo via `mkrc`.
-- `lsrc -t new-dotfiles`: list what rcm would link and where.
+- `lsrc`: list what rcm would link and where.
 - Apply changes: i3 `$Mod+Shift+c` (reload) or `$Mod+Shift+r` / `i3-msg restart`; polybar via `polybar-session`; zsh by opening a new shell; `xprofile` only on next login.
 
 ## Desktop wiring (spans several files)

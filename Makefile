@@ -1,7 +1,7 @@
 .PHONY: check
 check:
-	diff ~/.config/mimeapps.list tag-new-dotfiles/config/mimeapps.list
+	diff ~/.config/mimeapps.list config/mimeapps.list
 
 .PHONY: update
 update:
-	mkrc -t new-dotfiles ~/.config/mimeapps.list
+	mkrc ~/.config/mimeapps.list
