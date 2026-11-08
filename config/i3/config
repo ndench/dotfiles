@@ -331,6 +331,7 @@ for_window [class="(?i)onepassword"] floating enable
 for_window [class="pritunl"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [class="Xarchiver"] floating enable
+for_window [class="flameshot"] floating enable
 
 popup_during_fullscreen smart
 
