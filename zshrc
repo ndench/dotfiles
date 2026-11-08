@@ -254,4 +254,7 @@ compinit
 #promptinit
 #prompt adam1
 
-[[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# an if (not `[[ ]] &&`) so a missing brew doesn't leave $? = 1 at the first prompt
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
