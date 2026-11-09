@@ -81,11 +81,11 @@ for arg in "$@"; do
             if grep -q 'exec startx' $HOME/.*profile; then
                 ANS="$(rofi -sep "|" -dmenu -i -p 'System' -width 20 \
                     -hide-scrollbar -line-padding 4 -padding 20 \
-                    -lines 3 <<< " Lock| Reboot| Shutdown")"
+                    -lines 3 <<< "   Lock|   Reboot|   Shutdown")"
             else
                 ANS="$(rofi -sep "|" -dmenu -i -p 'System' -width 20 \
                     -hide-scrollbar -line-padding 4 -padding 20 \
-                    -lines 6 <<< " Lock| Logout| Reboot| Shutdown| Disable| Enable")"
+                    -lines 6 <<< "   Lock|󰍃   Logout|   Reboot|   Shutdown|   Disable lockscreen|   Enable lockscreen")"
             fi
 
             case "$ANS" in
@@ -93,8 +93,8 @@ for arg in "$@"; do
                 *Reboot) systemctl reboot ;;
                 *Shutdown) systemctl -i poweroff ;;
                 *Logout) i3-msg exit ;;
-                *Disable) xautolock -disable ;;
-                *Enable) xautolock -enable ;;
+                *"Disable lockscreen") xautolock -disable ;;
+                *"Enable lockscreen") xautolock -enable ;;
             esac
             ;;
         *)
