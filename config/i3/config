@@ -22,6 +22,13 @@
 
 # border & title.. Must be set to border pixel for gaps to work
 for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+# app overlays/popups are transparent windows with a rounded card inside, so a
+# border draws a stray rectangle around the card. Well-behaved apps mark them as
+# toolbar/notification windows; OpenWhispr's meeting popup is type normal, so
+# match its floating windows (its tiled Control Panel keeps the border)
+for_window [window_type="toolbar"] border none
+for_window [window_type="notification"] border none
+for_window [class="^open-whispr$" floating] border none
 
 # hide title bars
 default_border pixel 1
