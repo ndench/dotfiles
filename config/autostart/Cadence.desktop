@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Cadence
-Comment=Cadencestartup script
-Exec=/usr/bin/cadence-app 
-StartupNotify=false
-Terminal=false

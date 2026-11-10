@@ -94,6 +94,9 @@ exec --no-startup-id xinput set-prop "MOSART Semi. 2.4G Wireless Mouse" "libinpu
 # DRATA
 exec --no-startup-id drata-agent
 
+# CADENCE: the only app started at login (i3 doesn't run ~/.config/autostart)
+exec --no-startup-id cadence-app
+
 # OPENWHISPR: keep the dictation pop-up above tiled windows (see bin/openwhispr-raise)
 exec_always --no-startup-id ~/bin/openwhispr-raise
 
