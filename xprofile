@@ -21,9 +21,6 @@ blueman-applet &
 # start the volume tray application
 volumeicon &
 
-# restore the last wallpaper applied with nitrogen
-nitrogen --restore &
-
 # start xfce power manager
 #xfce4-power-manager &
 
