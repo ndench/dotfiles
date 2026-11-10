@@ -1,0 +1,9 @@
+#!/bin/sh
+# Lock the screen with i3lock, then activate the X screensaver.
+# 1Password locks when it sees the X screensaver turn on (it can't see i3lock),
+# and blanking the screen once it's locked doesn't hurt either. i3lock forks
+# once it has grabbed the screen, so --blur screenshots the desktop first.
+# xautolock's -locker; rofi's Lock goes through xautolock -locknow.
+
+i3lock --ignore-empty-password --show-failed-attempts --blur 10 --inside-color 3f4655aa \
+    && xset s activate

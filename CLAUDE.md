@@ -22,7 +22,7 @@ Personal Linux dotfiles (Arch, i3 on X11) managed with [rcm](https://github.com/
 ## Desktop wiring (spans several files)
 
 - `xprofile` runs at login: starts picom, tray applets (nm-applet, blueman, volumeicon), nitrogen wallpaper, polkit/keyring, and sets `xset` DPMS and key repeat.
-- `config/i3/config` is the window manager: keybindings, autostart `exec`s (xautolock/i3lock, drata-agent), and launchers that call scripts in `bin/` (`rofi_run -r/-l/-q` for run, logout and quit menus). Terminal is ghostty (`config/ghostty`).
+- `config/i3/config` is the window manager: keybindings, autostart `exec`s (xautolock running `bin/lock`, which runs i3lock then `xset s activate` so 1Password locks too; drata-agent), and launchers that call scripts in `bin/` (`rofi_run -r/-l/-q` for run, logout and quit menus). Terminal is ghostty (`config/ghostty`).
 - Polybar isn't installed (i3bar + i3status is used); its config is kept but dead. `config/polybar/config` includes `master.conf` and `modules.conf` by **absolute path** (`/home/nathan/.config/polybar/...`); bars are chosen by `bin/polybar-session` using `config/polybar/sessions`.
 - `zshenv` and `profile` both set PATH (`~/bin` and `~/.local/bin`) and load nvm; keep them in sync. `profile` is what the lightdm X session reads, so it's what i3/rofi-launched apps see.
 - `config/autostart/` holds the XDG autostart entries apps created for "start at login" (1Password, drata-agent, Cadence, Slack).
